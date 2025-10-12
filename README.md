@@ -29,12 +29,12 @@ Pivot charts and correlation plots helped validate data accuracy and highlight r
 </p>
 
 <p align="center">
-  <img src="docs/images/fraud-gender-category.png" width="800"><br>
+  <img src="docs/images/fraud-gender-category.png" width="950"><br>
   <em>Fraud distribution by gender and product category</em>
 </p>
 
 <p align="center">
-  <img src="docs/images/top-states-transactions.png" width="800"><br>
+  <img src="docs/images/top-states-transactions.png" width="600"><br>
   <em>Top 3 states by transaction volume (TX, PA, NY)</em>
 </p>
 
@@ -168,7 +168,6 @@ Interactive **Tableau dashboards** were developed to present the findings visual
 │
 └── LICENSE
 ```
-
 ---
 
 ## 📄 Dataset Note
