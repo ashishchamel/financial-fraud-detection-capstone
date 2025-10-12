@@ -1,0 +1,21 @@
+DATA ACCESS NOTE
+
+The original dataset used in this project exceeds GitHub’s upload size limits 
+(~45MB compressed, ~120MB uncompressed). Therefore, it has not been included 
+in this repository.
+
+File Names:
+- Financial_Fraud_Detection_Datasets.zip
+- FraudCapstone.xlsx
+
+Data contains anonymized credit card transaction records used for financial fraud detection analysis.
+It was provided as part of the Simplilearn Capstone project module and is used for educational purposes only.
+
+If you wish to reproduce this analysis:
+1. Contact Simplilearn support (for learners) for access to the dataset.
+2. Alternatively, use an open-source equivalent dataset such as:
+   “Credit Card Fraud Detection” from Kaggle:
+   https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+
+All analysis steps, transformations, and validation SQL scripts are reproducible
+using the sample structure included in this repository.
