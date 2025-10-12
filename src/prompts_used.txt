@@ -1,0 +1,7 @@
+Prompts Used (AI-assisted workflow)
+
+1. Generate SQL summary query for fraud detection dataset.
+2. Design Python EDA workflow: correlation, histogram, and fraud rate distribution.
+3. Extract top predictive features (feature importance) using classification models.
+4. Create Tableau dashboards summarizing fraud KPIs, geographic fraud trends, and state-level analysis.
+5. Generate professional README and repository structure for the Simplilearn Capstone project.
