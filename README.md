@@ -1,110 +1,128 @@
 # 🕵️‍♂️ Financial Fraud Detection Capstone Project
 
-This capstone project focuses on **detecting financial fraud in transaction data** using a full analytics workflow — spanning **Excel, SQL, Python, and Tableau**.  
-The project demonstrates real-world data validation, fraud pattern detection, feature engineering, and interactive visualization for decision support.
+This capstone project demonstrates an **end-to-end financial fraud detection pipeline** using **Excel, SQL, Python, and Tableau**.  
+The analysis focuses on identifying fraudulent credit-card transactions, understanding behavioural drivers, and presenting interactive dashboards for business monitoring.
 
 ---
 
 ## 🎯 Objective
 
-To analyze and visualize credit card transaction data to:
-- Identify fraud patterns and behavioral trends  
-- Detect anomalies in transaction amount and frequency  
-- Compare fraud distribution across demographics and locations  
-- Develop an interactive fraud detection dashboard for monitoring  
+To detect and analyze fraudulent transactions using a multi-tool workflow:
+- initial verification in Excel  
+- aggregation & validation in SQL  
+- EDA and feature analysis in Python  
+- interactive dashboards in Tableau
 
 ---
 
 ## 🧩 Project Workflow
 
 ### 🪣 Step 1 — Excel: Preliminary Data Analysis  
-*(Reference: Report Step 1D–1H)*  
+*(Reference: Report Step 1D–1H)*
 
-Initial data validation and exploratory checks were performed in **Excel** to understand transaction distribution, demographic splits, and regional activity.
+Initial checks and pivot summaries were performed in Excel to confirm structure, spot anomalies, and generate quick aggregates.
 
 <p align="center">
-  <img src="docs/images/excel-top-states-summary.png" width="700"><br>
-  <em>Excel summary of top states by transaction count (TX, PA, NY)</em>
+  <img src="docs/images/top-states-transactions.png" width="700"><br>
+  <em>Excel summary: top states by transaction count</em>
 </p>
 
 ---
 
 ### 🧮 Step 2 — SQL: Transaction Validation & Fraud Summary  
-*(Reference: Report Step 2, Pages 12–13)*  
+*(Reference: Report Step 2, Pages 12–13)*
 
-SQL was used to validate transaction counts and compute core fraud metrics such as total transactions, total fraud cases, and fraud percentage.
+SQL was used to validate totals and compute the baseline fraud metric (total transactions, total frauds, fraud percentage).
 
 <p align="center">
   <img src="docs/images/sql-fraud-summary.png" width="700"><br>
-  <em>MySQL query results showing total transactions, total frauds, and fraud rate (0.58%)</em>
+  <em>SQL summary: total transactions, total frauds, and fraud rate</em>
 </p>
 
 ---
 
 ### 🧑‍💻 Step 3 — Python: Exploratory Data Analysis (EDA)  
-*(Reference: Report Step 3D–3N)*  
+*(Reference: Report Step 3D–3N)*
 
-EDA was performed in **Python** using Pandas, Seaborn, and Matplotlib to study transaction distributions, fraud behavior, and correlations between features.
+Extensive EDA was conducted in Python (Pandas, Matplotlib, Seaborn) to analyze distributions, outliers, and relationships between variables.
 
 <p align="center">
   <img src="docs/images/histogram-transactions.png" width="850"><br>
-  <em>Distribution of transaction amounts (raw and log-transformed), fraud boxplot, and scatter with city population</em>
+  <em>Transaction distributions (raw and log-transformed), fraud boxplot, and scatter vs city population</em>
 </p>
 
-**Key Observations:**  
-- Transaction amounts are right-skewed, with a few extreme high-value transactions.  
-- Fraud transactions generally cluster around higher transaction amounts.  
-- Correlation analysis shows a mild relationship between population and transaction value.  
+<p align="center">
+  <img src="docs/images/python-amt-boxplot.png" width="850"><br>
+  <em>Boxplot: transaction amount by fraud label</em>
+</p>
+
+<p align="center">
+  <img src="docs/images/correlation-amt-citypop.png" width="850"><br>
+  <em>Scatter: transaction amount vs city population</em>
+</p>
+
+**Key EDA findings:**  
+- Amounts are right-skewed with notable outliers.  
+- Fraud instances tend to occur at higher transaction amounts.  
+- City population shows a mild positive correlation with transaction amounts.
 
 ---
 
 ### ⚙️ Step 4 — Feature Engineering & Model Insights  
-*(Reference: Report Step 3N, Page 22)*  
+*(Reference: Report Step 3N)*
 
-Feature importance and behavioral analysis were conducted using model interpretation techniques.  
-Key drivers of fraud probability were visualized through SHAP and category-based aggregations.
+Feature importance and SHAP-style interpretation were used to identify the features that most influence fraud predictions.
 
 <p align="center">
   <img src="docs/images/feature-importance.png" width="850"><br>
-  <em>Feature interaction (log_amt vs amt) and Top 10 Jobs by Average Transaction Amount</em>
+  <em>Feature interactions and importance (SHAP-style) and job-based average amounts</em>
+</p>
+
+<p align="center">
+  <img src="docs/images/avg-amt-job.png" width="850"><br>
+  <em>Average transaction amount by job category</em>
+</p>
+
+<p align="center">
+  <img src="docs/images/fraud-gender-category.png" width="850"><br>
+  <em>Fraud by gender and category breakdown</em>
 </p>
 
 **Insights:**  
-- Transaction amount (`amt`) and its log transformation (`log_amt`) were top predictors.  
-- High-value professions show significantly higher spend outliers.  
+- `amt`, `log_amt`, `job`, and `city_pop` are among the top predictors.  
+- Certain occupations show higher average spend and more outliers.
 
 ---
 
-### 📊 Step 5 — Tableau Visualization & Dashboards  
-*(Reference: Report Step 4C–4E)*  
+### 📊 Step 5 — Tableau: Dashboards & Storytelling  
+*(Reference: Report Step 4C–4E)*
 
-Developed interactive Tableau dashboards to monitor fraud KPIs and visualize geographic and temporal patterns.  
-Two key dashboards were created — **Fraud KPI Overview** and **Fraud Deep Dive**.
+Final interactive dashboards were created in Tableau to present KPIs, geographic hotspots, and temporal trends.
 
 <p align="center">
   <img src="docs/images/tableau-kpi-dashboard.png" width="900"><br>
-  <img src="docs/images/tableau-fraud-trend.png" width="900"><br>
-  <img src="docs/images/tableau-fraud-map.png" width="900"><br>
-  <em>Fraud detection dashboards in Tableau showing trends, KPIs, and geographic insights</em>
+  <em>Tableau KPI Dashboard — total txns, frauds, and fraud rate</em>
 </p>
 
-**Highlights:**  
-- Fraud rate: **0.58% across ~390,000 transactions**  
-- Interactive map showing fraud hotspots across U.S. states  
-- KPI summary and monthly fraud rate trends  
-- Gender × Category comparison for fraud risk  
+<p align="center">
+  <img src="docs/images/tableau-fraud-trend.png" width="900"><br>
+  <em>Tableau Trend — monthly fraud trend</em>
+</p>
+
+<p align="center">
+  <img src="docs/images/tableau-fraud-map.png" width="900"><br>
+  <em>Tableau Map — geographic fraud distribution</em>
+</p>
 
 ---
 
 ## 🧠 Tools & Technologies
 
-| Tool | Purpose |
-|------|----------|
-| **Microsoft Excel** | Initial data exploration, pivot summaries |
-| **MySQL Workbench** | Data validation, aggregation, fraud metrics |
-| **Python (Pandas, Matplotlib, Seaborn)** | Data preprocessing and EDA |
-| **Tableau Desktop** | Fraud KPI and map dashboards |
-| **SQL Script** | Fraud summary query automation |
+- **Excel** — initial checks and pivot summaries  
+- **MySQL / SQL** — validation and aggregation (see `src/fraud_sql_queries.sql`)  
+- **Python (Pandas, Matplotlib, Seaborn)** — EDA, feature engineering, visualization  
+- **Scikit-learn** — modeling and feature importance  
+- **Tableau Desktop** — dashboards (`src/fraud_detection_dashboard.twbx`)
 
 ---
 
@@ -124,13 +142,16 @@ Two key dashboards were created — **Fraud KPI Overview** and **Fraud Deep Dive
 │
 ├── docs/
 │ ├── images/
-│ │ ├── excel-top-states-summary.png
-│ │ ├── sql-fraud-summary.png
-│ │ ├── histogram-transactions.png
+│ │ ├── avg-amt-job.png
+│ │ ├── correlation-amt-citypop.png
 │ │ ├── feature-importance.png
-│ │ ├── tableau-kpi-dashboard.png
-│ │ ├── tableau-fraud-trend.png
+│ │ ├── fraud-gender-category.png
+│ │ ├── histogram-transactions.png
+│ │ ├── python-amt-boxplot.png
+│ │ ├── sql-fraud-summary.png
 │ │ ├── tableau-fraud-map.png
+│ │ ├── tableau-fraud-trend.png
+│ │ ├── tableau-kpi-dashboard.png
 │ │ └── top-states-transactions.png
 │ │
 │ └── report/
@@ -145,34 +166,20 @@ Two key dashboards were created — **Fraud KPI Overview** and **Fraud Deep Dive
 │
 └── LICENSE
 ```
+---
+
+## 📄 Dataset Note
+
+The original dataset used in this capstone is large and not included in this repository. See `data/raw/DATA_ACCESS_NOTE.txt` for access instructions and alternatives.
 
 ---
 
-## 📄 Dataset Information
-
-> The original dataset used in this project exceeds GitHub’s file size limit.  
-> A compressed version (`Financial_Fraud_Detection_Datasets.zip`) is provided under `data/raw/`.  
-> Full data remains securely stored locally for verification and replication.
-
----
-
-## 👤 Author  
+## 👤 Author
 
 **Ashish Chamel**  
-Simplilearn Capstone Project — 2025  
+Simplilearn Capstone Project — 2025
 
 ---
 
-## 🏷️ Repository Details  
+*“Turning transaction records into actionable fraud intelligence using a multi-tool analytics workflow.”*
 
-**Name:** `financial-fraud-detection-capstone`  
-**Description:**  
-> Comprehensive end-to-end fraud detection analysis integrating Excel, SQL, Python, and Tableau. Includes EDA, feature engineering, and KPI dashboards for fraud monitoring.  
-
-**Tags:**  
-`fraud-detection` `data-analytics` `python` `sql` `tableau` `eda` `simplilearn` `capstone-project`
-
----
-
-### ✅ End of Project Documentation
-*"Turning raw data into fraud intelligence through analytics, validation, and visualization."*
