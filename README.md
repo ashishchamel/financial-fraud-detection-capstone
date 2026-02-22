@@ -167,12 +167,41 @@ Recommended actions:
 
 ```
 financial-fraud-detection-capstone/
+│
+├── README.md
+│
 ├── data/
+│   ├── raw/
+│   │   ├── DATA_ACCESS_NOTE.txt
+│   │   └── README_dataset_info.txt
+│   │
+│   └── processed/
+│       └── README_placeholder.txt
+│
 ├── docs/
-│ ├── images/
-│ └── report/
+│   ├── images/
+│   │   ├── avg-amt-job.png
+│   │   ├── correlation-amt-citypop.png
+│   │   ├── feature-importance.png
+│   │   ├── fraud-gender-category.png
+│   │   ├── histogram-transactions.png
+│   │   ├── python-amt-boxplot.png
+│   │   ├── sql-fraud-summary.png
+│   │   ├── fraud-landscape-overview.png
+│   │   ├── risk-behavior-analysis.png
+│   │   └── mitigation-business-impact.png
+│   │
+│   └── report/
+│       ├── Financial_Fraud_Detection_Report.pdf
+│       └── Simplilearn_Project_Guidelines.pdf
+│
 ├── src/
-└── README.md
+│   ├── fraud_sql_queries.sql
+│   ├── fraud_detection_dashboard.twbx
+│   ├── prompts_used.txt
+│   └── README_placeholder.txt
+│
+└── LICENSE
 ```
 
 
