@@ -1,6 +1,6 @@
 # Financial Fraud Detection Capstone Project
 
-End-to-end fraud analytics pipeline using **Excel, SQL, Python, and Tableau** — transforming raw transaction data into actionable fraud intelligence dashboards.
+End-to-end fraud analytics pipeline using **Excel, SQL, Python, and Tableau** - transforming raw transaction data into actionable fraud intelligence dashboards.
 
 This project covers data validation, exploratory analysis, feature engineering, and business-focused visualization for identifying high-risk transactions and operational mitigation strategies.
 
